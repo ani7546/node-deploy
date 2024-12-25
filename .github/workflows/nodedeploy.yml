@@ -43,7 +43,7 @@ jobs:
       - name: Deploy application
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@13.126.31.21 << EOF
-          cd /home/ec2-user/node-hello || git clone https://github.com/username/node-hello.git /home/ec2-user/node-hello && cd /home/ec2-user/node-hello
+          cd /home/ubuntu/node-hello || git clone  https://github.com/johnpapa/node-hello /home/ubuntu/node-hello && cd /home/ubuntu/node-hello
           git pull origin main
           npm install
           pm2 restart all || pm2 start app.js
