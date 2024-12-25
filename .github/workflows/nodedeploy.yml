@@ -22,7 +22,6 @@ jobs:
 
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.5.3
-
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
           
@@ -43,7 +42,7 @@ jobs:
 
       - name: Deploy application
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@13.126.31.21 << EOF
+          ssh -o StrictHostKeyChecking=no ubuntu@13.126.31.21 << EOF
           cd /home/ec2-user/node-hello || git clone https://github.com/username/node-hello.git /home/ec2-user/node-hello && cd /home/ec2-user/node-hello
           git pull origin main
           npm install
