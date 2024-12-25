@@ -46,5 +46,5 @@ jobs:
           cd /home/ubuntu/node-hello || git clone  https://github.com/johnpapa/node-hello.git /home/ubuntu/node-hello && cd /home/ubuntu/node-hello
           git pull origin main
           npm install
-          pm2 restart all || pm2 start app.js
+          pm2 restart all || pm2 start index.js
           EOF
