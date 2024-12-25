@@ -18,6 +18,10 @@ jobs:
 
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          
+      - name: Test SSH Connection
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@<EC2_PUBLIC_IP> "echo 'SSH connection successful'"
 
       - name: Get GitHub Runner Public IP
         id: get_runner_ip
